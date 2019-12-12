@@ -1,0 +1,16 @@
+  <nav>
+    <div class="nav-wrapper black-text teal darken-3">
+      <a href="#" class="brand-logo center">Logo</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="{% url 'posts_list_url' %}">Posts</a></li>
+        <li><a href="{% url 'tags_list_url' %}">Tags</a></li>
+        <form class="right" action="{% url 'posts_list_url' %}">
+          <div class="input-field">
+            <input id="search" type="search" name="search">
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>>
+      </ul>
+    </div>
+  </nav>

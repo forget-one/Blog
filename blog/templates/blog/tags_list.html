@@ -1,0 +1,18 @@
+{% extends 'blog/layout.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for n in tags %}
+            <div class="container center">
+                <div class="col s4">
+                    <div class="card purple lighten-5">
+                        <div class="card-content black-text">
+                            <span class="card-title"><a href="{% url 'tag_detail_url' det_slug=n.slug %}">{{ n.title }}</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

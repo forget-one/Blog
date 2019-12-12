@@ -1,0 +1,26 @@
+{% extends 'blog/layout.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for n in page.object_list %}
+            <div class="container">
+                <div class="col s12">
+                    <div class="card purple lighten-5">
+                        <div class="card-content black-text">
+                            <span class="card-title">{{ n.title }}</span>
+                            <p>
+                                {{ n.body|truncatechars:60 }}
+                            </p>
+                        </div>
+                        <div class="card-action ">
+                            <a href="{% url 'post_detail_url' det_slug=n.slug %}" class="waves-effect waves-light btn purple lighten-4">Read...</a>
+                            <p class="right deep-purple-text text-darken-3">{{ n.date_pub }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% include 'blog/inc_pagination.html' %}
+        </div>     
+    </div>
+{% endblock %}

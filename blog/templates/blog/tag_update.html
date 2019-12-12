@@ -1,0 +1,13 @@
+{% extends 'blog/layout.html' %}
+{% block content %}
+
+    <form action="{% url 'tag_update_url' det_slug=tag.slug %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn waves-effect waves-light" type="submit">
+            Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+
+{% endblock %}

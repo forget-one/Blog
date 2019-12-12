@@ -1,0 +1,15 @@
+{% if is_paginated %}
+<div class="container center">
+    <ul class="pagination">
+        <li class="{% if not prev_url %} disabled {% else %} wawes -effect {% endif %}"><a href="{{ prev_url }}"><i class="material-icons">chevron_left</i></a></li>
+        {% for i in page.paginator.page_range %}
+            {% if page.number == i %}
+            <li class="active"><a href="?page={{ i }}">{{ i }}</a></li>
+            {% elif i > page.number|add:-3 and i < page.number|add:3  %}
+            <li class="waves-effect"><a href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+        {% endfor %}
+        <li class="{% if not next_url %} disabled {% else %} wawes -effect {% endif %}"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+</div>
+{% endif %}  

@@ -1,0 +1,20 @@
+{% extends 'blog/layout.html' %}
+{% block content %}
+<div class="row center">
+    <form action="{% url 'tag_detail_url' det_slug=tag.slug %}">
+        <button class="btn waves-effect waves-light">
+            Return
+            <i class="material-icons right">keyboard_arrow_left</i>
+        </button>
+    </form>
+    
+     <form action="{% url 'tag_delete_url' det_slug=tag.slug %}" method="post">
+        {% csrf_token %}
+
+        <button class="btn waves-effect waves-light red darken-4" type="submit">
+            Delete
+            <i class="material-icons right">delete_forever</i>
+        </button>
+    </form>
+</div>
+{% endblock %}

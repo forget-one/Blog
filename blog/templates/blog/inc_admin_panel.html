@@ -1,0 +1,18 @@
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+        <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+        <li><a href="{% url 'post_create_url' %}" class="btn-floating green"><i class="material-icons">add</i></a></li>
+        {% if post %} 
+        <li><a href="{% url 'post_update_url' det_slug=post.slug %}" class="btn-floating green"><i class="material-icons">replay</i></a></li>
+        <li><a href="{% url 'post_delete_url' det_slug=post.slug %}" class="btn-floating green"><i class="material-icons">clear</i></a></li>
+        {% endif %}
+        <li><a href="{% url 'tag_create_url' %}" class="btn-floating indigo darken-1"><i class="material-icons">add</i></a></li>
+        {% if tag %}
+        <li><a href="{% url 'tag_update_url' det_slug=tag.slug %}" class="btn-floating indigo darken-1"><i class="material-icons">replay</i></a></li>
+        <li><a href="{% url 'tag_delete_url' det_slug=tag.slug %}" class="btn-floating indigo darken-1"><i class="material-icons">clear</i></a></li>
+        {% endif %}
+        <li><a href="/admin" class="btn-floating grey darken-3"><i class="material-icons">account_box</i></a></li>
+    </ul>
+</div>
